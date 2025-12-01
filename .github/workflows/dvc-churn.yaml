@@ -42,7 +42,7 @@ jobs:
 
       - name: Pull data & models from DVC remote
         run: |
-          dvc pull
+          dvc pull -v
 
       - name: Train / Evaluate model(s)
         run: |
