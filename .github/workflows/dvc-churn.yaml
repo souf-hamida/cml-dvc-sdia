@@ -35,10 +35,10 @@ jobs:
       - name: Configure DVC remote for Google Drive (OAuth user creds)
         run: |
           echo '${{ secrets.GDRIVE_CREDENTIALS_JSON }}' > gdrive_user_credentials.json
-          dvc remote add -d new_gdrive gdrive://1UQDpM71Kl1gEQb-geIEYDSwBD0-4L2PD
-          dvc remote modify --local new_gdrive gdrive_user_credentials_file gdrive_user_credentials.json
-          dvc remote modify --local new_gdrive gdrive_client_id "${{ secrets.GDRIVE_CLIENT_ID }}"
-          dvc remote modify --local new_gdrive gdrive_client_secret "${{ secrets.GDRIVE_CLIENT_SECRET }}"
+          dvc remote add -d mygdrive gdrive://1UQDpM71Kl1gEQb-geIEYDSwBD0-4L2PD
+          dvc remote modify --local mygdrive gdrive_user_credentials_file gdrive_user_credentials.json
+          dvc remote modify --local mygdrive gdrive_client_id "${{ secrets.GDRIVE_CLIENT_ID }}"
+          dvc remote modify --local mygdrive gdrive_client_secret "${{ secrets.GDRIVE_CLIENT_SECRET }}"
 
       - name: Pull data & models from DVC remote
         run: |
